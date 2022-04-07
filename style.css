@@ -1,0 +1,232 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+:root{
+    --twitter-blue: #1DA1F2;
+    --twitter-dark-blue: hsl(206, 82%, 55%);
+    --twitter-gray-text: #464d54;
+    --twitter-extra-light-gray: #E1E8ED;
+}
+a{
+    text-decoration: none;
+}
+
+
+/*HEADER*/
+.header{
+    grid-area: header;
+}
+.header img{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+
+/*GREETING*/
+.greeting{
+    grid-area: greeting;
+}
+#big{
+    font-size: 70px;
+    font-weight: 800;
+    margin-left: 30px;
+}
+#small{
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+
+/*LOG-IN*/
+.log-in{
+    grid-area: log-in;
+    padding-left: 30px;
+}
+.sign-up{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 50px;
+    padding: 8px 0;
+    width: 330px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+#google a{
+    color: #000;
+    opacity: 0.7;
+    font-weight: 400;
+}
+#google:hover{
+    cursor: pointer;
+}
+
+#apple a{
+    color: #000;
+    font-weight: bold;
+}
+#apple:hover{
+    cursor: pointer;
+    background-color: var(--twitter-extra-light-gray);
+}
+
+#hr-or{
+    position: relative;
+}
+#hr{
+    width: 330px;
+    margin-left: 0;
+    opacity: 0.1;
+    z-index: 1;
+}
+#or{
+    position: absolute;
+    background-color: white;
+    top: -31px;;
+    padding: 3px;
+    margin-left: 145px;
+    z-index: 2;
+}
+
+#number-or-email{
+    background-color: var(--twitter-blue);
+    border-color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 20px;
+    width: 290px;
+}
+#number-or-email:hover{
+    cursor: pointer;
+    background-color: var(--twitter-dark-blue);
+}
+#number-or-email a{
+    color: #fff;
+    font-weight: bold;
+}
+
+#explanation{
+    width: 330px;
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+#explanation a{
+    color: var(--twitter-blue);
+}
+#explanation a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#sign-in a{
+    font-weight: bold;
+    color: var(--twitter-blue);
+}
+#sign-in:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+
+
+/*IMAGE*/
+.image{
+    grid-area: image;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*FOOTER*/
+footer{
+    grid-area: footer;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.7;
+}
+#footer-a{
+    margin-top: 10px;
+    padding: 0 30px;
+    line-height: 30px;
+}
+footer a{
+    text-decoration: none;
+    color: #000;
+    margin-right: 15px;
+}
+footer a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+footer p{
+    color: var(--twitter-gray-text);
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    'image header'
+    'image greeting'
+    'image log-in'
+    'footer footer';
+}
+
+@media (max-width: 1028px){
+    .container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        'header'
+        'greeting'
+        'log-in'
+        'image'
+        'footer';
+    }
+    .header{
+        grid-area: header;
+    }
+    .greeting{
+        grid-area: greeting;
+    }
+    .log-in{
+        grid-area: log-in;
+    }
+    .image{
+        grid-area: image;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        height: auto;
+    }
+    .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    footer{
+        grid-area: footer;
+    }
+}
